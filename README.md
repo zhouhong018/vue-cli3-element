@@ -51,3 +51,112 @@ yarn run build
     ├─router
     └─store
 ```
+### 列表页实现示例--详情见代码
+```
+<template>
+    <div>
+        <list-render ref="list" :config="config"></list-render>
+    </div>
+</template>
+<script>
+import config from '../config/list'; // 列表页配置参数
+export default {
+    data () {
+        return {
+            config: config
+        }
+    },
+    methods: {
+        toDeatil(row) { // 自定义方法
+ 
+        }
+    }
+}
+</script>
+-------------------------------------------------
+const config = {
+    diaTitle: { //新增、编辑的自定义title，可不写
+        add: '新增信息',
+        edit: '编辑信息'
+    },
+	cols: [{ //搜索、列表、新增、编辑的数据
+        key: 'name',
+        search: true,
+		label: '姓名'
+    }],
+    
+    btns: {
+        add: true //快捷写法-已定义常用的才可以这样使用
+    },
+
+    opes: {
+        edit: true
+    },
+
+    rule: {
+        type: 'on', // on(校验) off(不校验) all(全部校验，不用写下面index: '')
+        index: '0 1 2' //对应下标
+    },
+
+    api: { // 接口
+        $list: '/users/list'
+    }
+};
+
+export default config;
+```
+### 详情页实现
+```
+<template>
+    <div>
+        <detail-render ref="detail" :config="config"></detail-render>
+    </div>
+</template>
+<script>
+import config from '../config/detail'; // 详情页配置参数
+export default {
+    data () {
+        return {
+            config: config
+        }
+    },
+    methods: {
+        detail_remove() { // 自定义
+        }
+    }
+}
+</script>
+---------------------------------------------
+import cols from './_detail_cols';
+import skill from './_detail_skill'; 同列表页参数
+import live from './_detail_live'; 同列表页参数
+
+const config = {
+	cols: cols, // 头信息
+
+	tabs: [skill, live], // 页签数据
+
+	rule: { // 头信息的校验--编辑
+		type: 'on',
+		index: '0-2'
+	},
+
+	api: {
+		$detail: '/users/detail'
+	},
+
+	edit: { //编辑页置灰项
+		form: {
+			disabled: [4]
+		}
+	},
+
+	btns: {
+		save: {
+			detailShow: 'edit'
+		}
+	}
+};
+
+export default config;
+```
