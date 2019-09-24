@@ -1,6 +1,7 @@
 # vue3.0 demo 
 ![avatar](./src/assets/images/1.png)
 ![avatar](./src/assets/images/2.png)
+### 技术栈
 ```
 vue element i18n axios
 ```
