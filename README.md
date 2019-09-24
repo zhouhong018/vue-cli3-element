@@ -1,4 +1,6 @@
 # vue3.0 demo 
+![avatar](./src/assets/images/1.png)
+![avatar](./src/assets/images/2.png)
 ```
 vue element i18n axios
 ```
@@ -105,7 +107,7 @@ const config = {
 
 export default config;
 ```
-### 详情页实现
+### 详情页实现--详情见代码
 ```
 <template>
     <div>
