@@ -1,0 +1,102 @@
+.table-container{
+    margin-top:16px;
+    margin-bottom: 24px;
+    width: 100%;
+    overflow: auto;
+    thead, tbody {
+      color: $hc-black-75;
+    }
+    span.total {
+      font-weight: 700;
+      color: #333;
+    }
+    a.total {
+      font-weight: 700;
+    }
+    .choice-table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #dfe6ec;
+      tr {
+        background-color: #fff;
+        text-align: left;
+        td {
+          transition: background-color .25s ease;
+        }
+      }
+      tr:nth-child(2n) td {
+        // background-color: #fafafa;
+      }
+      tr:hover td {
+        background-color: #eff4f8;
+      }
+      td {
+        box-sizing: border-box;
+        height: 50px;
+        border-bottom: 1px solid #dfe6ec;
+        &.name{
+          .cell{
+            width: 130px
+          }
+        }
+      }
+      .no-bt {
+        border-bottom: 0;
+      }
+
+      .cell {
+        box-sizing: border-box;
+        overflow: auto;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-all;
+        line-height: 20px;
+        font-size: 14px;
+        color: #333;
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+      .table-head {
+        tr {
+          background-color: #eef1f6;
+          th {
+            height: 50px;
+            box-sizing: border-box;
+            border-bottom: 1px solid #dfe6ec;
+            min-width: 50px;
+            font-weight: normal;
+            .cell{
+              white-space: nowrap;
+              i{
+                color: #B8C3D4;
+              }
+            }
+          }
+          .no-th {
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+    .el-table__empty-text {
+      color: $hc-black-45;
+    }
+    .table-action-btn {
+        padding: 0;
+        font-size: 12px;
+        line-height: normal;
+        height: 25px;
+        float: left;
+        margin-right: 8px;
+        margin-left: 0;
+    }
+
+    .el-table.el-table--border td:nth-last-child(1) {
+      border-right: solid 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .cell {
+      padding: 0 8px;
+    }
+  }
